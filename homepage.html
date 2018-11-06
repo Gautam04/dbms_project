@@ -20,6 +20,8 @@
                 <a class="list-group-item list-group-item-action active"  data-toggle="list" role="tab" href="#profile"><b>View Profile</b></a>
                 <a class="list-group-item list-group-item-action"  data-toggle="list" role="tab" href="#borrow"><b>Borrow Books</b></a>
                 <a class="list-group-item list-group-item-action"  data-toggle="list" role="tab" href="#return"><b>Return Books</b></a>
+                <a class="list-group-item list-group-item-action"  data-toggle="list" role="tab" href="#filter_author"><b>Filter by Author</b></a>
+                <a class="list-group-item list-group-item-action"  data-toggle="list" role="tab" href="#filter_genre"><b>Filter by Genre</b></a>
                 <a class="list-group-item list-group-item-action" id="logout_button"><b>Logout</b></a>
             </div>
         </div>
@@ -83,6 +85,65 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="tab-pane fade" id="filter_author" role="tabpanel">
+                    <div class="card mb-3">
+                         <div class="card-header bg-primary text-white">
+                            <b>Filter by Author</b>
+                        </div>
+                        <div class="card-body text-primary">
+                            <blockquote class="blockquote mb-0" id="book_auth">
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> -->
+                                <!-- Borrow Books -->
+                                <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+                                
+                                  <h4 class="page-heading">Search</h4>
+                                  <div class="input-container">
+                                    <i class="fa fa-user icon"></i>
+                                    <input class="input-field" type="text" placeholder="Author" name="auth" id="author_name">
+                                  </div> 
+                                  <button class="btn btn-primary search_author" id="search_auth">Search</button>
+                                  <br><br>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+
+                <div class="tab-pane fade" id="filter_genre" role="tabpanel">
+                    <div class="card mb-3">
+                         <div class="card-header bg-primary text-white">
+                            <b>Filter by Genre</b>
+                        </div>
+                        <div class="card-body text-primary">
+                            <blockquote class="blockquote mb-0" id="genre_book">
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> -->
+                                <!-- Borrow Books -->
+                                <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+                                
+                                  <h4 class="page-heading">Search</h4>
+                                  <div class="input-container">
+                                    <i class="fa fa-user icon"></i>
+                                    <input class="input-field" type="text" placeholder="Genre" name="genre" id="genre_name">
+                                  </div> 
+                                  <button class="btn btn-primary search_genre" id="genre_search">Search</button>
+                                  <br><br>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                </div>
+              
+
+
+
+
+
             </div>
             
         </div>

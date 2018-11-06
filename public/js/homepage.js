@@ -29,6 +29,7 @@ $.ajax({
            $("#return_book").append("Name:<span>"+response[i].bname+"</span><br>Author:<span>"+response[i].author+"</span><br>"+"<button class='btn btn-primary return_button'>Return</button><br><br>");
 
 		}
+
 	}
 })
 
@@ -60,7 +61,14 @@ $(document).on('click','button.borrow_button',function(){
 			data:{name:name,author:author},
 			complete:function(data){
 				console.log(data);
+				var response = data.responseJSON;
+				var i;
+				for(i=0;i<response.length;i++)
+				{
+		           $("#borrow_book").append("Name:<span>"+response[i].bname+"</span><br>Author:<span>"+response[i].author+"</span><br>"+"<button class='btn btn-primary borrow_button'>Borrow</button><br><br>");
+				}
 				window.location.reload();
+
 			}
 		})
 
@@ -81,6 +89,46 @@ $(document).on('click','button.return_button',function(){
 		})
 
 })
+
+$(document).on('click','button.search_author',function(){
+	var author=$('#author_name').val();
+	console.log(author);
+	$.ajax({
+			type:"GET",
+			url:"http://localhost:8080/getByAuthor",
+			data:{author:author},
+			complete:function(data){
+
+				var response = data.responseJSON;
+				var i;
+				for(i=0;i<response.length;i++)
+				{
+		           $("#book_auth").append("Name:<span>"+response[i].bname+"</span><br>Author:<span>"+response[i].author+"</span><br>"+"<button class='btn btn-primary borrow_button'>Borrow</button><br><br>");
+				}
+			}
+		})
+})
+
+$(document).on('click','button.search_genre',function(){
+	var genre=$('#genre_name').val();
+	console.log(genre);
+	$.ajax({
+			type:"GET",
+			url:"http://localhost:8080/getByGenre",
+			data:{genre:genre},
+			complete:function(data){
+
+				var response = data.responseJSON;
+				var i;
+				for(i=0;i<response.length;i++)
+				{
+		           $("#genre_book").append("Name:<span>"+response[i].bname+"</span><br>Author:<span>"+response[i].author+"</span><br>"+"<button class='btn btn-primary borrow_button'>Borrow</button><br><br>");
+				}
+			}
+		})
+})
+
+
 
 
 $(document).on('click','#logout_button',function(){

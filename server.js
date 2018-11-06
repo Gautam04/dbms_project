@@ -150,6 +150,28 @@ app.get("/getAll",function(req,res){
    });
 })
 
+app.get("/getByAuthor",function(req,res){
+   var username = req.session.username;
+   var author = req.query.author;
+   //console.log("hello");
+   con.query("SELECT * FROM books WHERE author='"+author+"' AND borrowed IS NULL",function(err,result,fields){
+      if(err) throw err;
+      console.log(result);
+      res.send(result);
+   });
+})
+
+app.get("/getByGenre",function(req,res){
+   var username = req.session.username;
+   var genre = req.query.genre;
+   //console.log("hello");
+   con.query("SELECT * FROM books WHERE genre='"+genre+"' AND borrowed IS NULL",function(err,result,fields){
+      if(err) throw err;
+      console.log(result);
+      res.send(result);
+   });
+})
+
 app.get("/borrow",function(req,res){
    var name = req.query.name;
    var author = req.query.author;
