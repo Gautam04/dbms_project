@@ -23,7 +23,7 @@
 /* Style the form icons */
 .icon {
   padding: 1%;
-  background: #2b2e38;
+  background: #007bff;
   color: white;
   min-width: 50px;
   text-align: center;
@@ -47,7 +47,7 @@
 
 /* Set a style for the submit button */
 .btn {
-  background-color: #2b2e38;
+  background-color: #007bff;
   color: white;
   padding: 3% 3%;
   margin-left:12.5%;
@@ -64,7 +64,7 @@
 }
 
 .tab{
-	background-color: #2b2e38;
+	background-color: #007bff;
 }
 
 .tab button{
@@ -79,7 +79,7 @@
 }
 
 .tab button:hover {
-	background-color:#576699;
+	background-color:#80bdff;
 }
 
 .intro{
